@@ -13,3 +13,4 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Route::get('/add_todo', [HomeController::class, 'add']) -> name('add');
 Route::post('/new',[HomeController::class,'store_todo']) -> name('new');
 Route::post('/delete/{id}',[HomeController::class,'delete_todo']) -> name('delete');
+Route::post('/update/{id}',[HomeController::class,'update_todo']) -> name('update');

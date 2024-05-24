@@ -65,6 +65,18 @@ class HomeController extends Controller
 
 
     }
+    public function update_todo(Request $request,$id){
+      $todo = todo::find($id);
+      
+      $todo->Title = $request->input('title');
+      $todo -> status = $request ->input('status');
+      
+      
+      $todo -> update();
 
+      return redirect() -> route('home');
+      
+
+    }
 
 }
